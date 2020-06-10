@@ -41,8 +41,7 @@
 
 ## 응답 메시지 
 ### 클라이언트 요청 
-    Accept: application/json
-    Authorization: Bearer UExBMDFUMDRQV1MwMnzpdvtYYNWMSJ7CL8h0zM6q6a9ntw
+    
 
 ### 서버 응답 
     Date: Mon, 23 May 2005 22:38:34 GMT
@@ -81,3 +80,7 @@
     - POST : 서버에 입력데이터를 전송 
     - TRACE : 클라이언트와 목적지 서버에 있는 모든 HTTP 애플리케이션 요청/응답 연쇄를 따라가면서 자신이 보낸 메시지의 이상 유무를 파악한다. 
     
+---
+출처
+https://www.youtube.com/watch?v=RP_f5dMoHFc
+http://www.hardcopyworld.com/ngine/aduino/index.php/archives/3287
