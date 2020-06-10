@@ -41,8 +41,7 @@
 
 ## 응답 메시지 
 ### 클라이언트 요청 
-    
-
+    ![request](/img/request.png)
 ### 서버 응답 
     Date: Mon, 23 May 2005 22:38:34 GMT
     Content-Type: text/html; charset=UTF-8
