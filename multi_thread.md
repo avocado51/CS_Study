@@ -96,7 +96,7 @@
     -   2개 프로세스 : 데커 알고리즘, 피터슨 알고리즘
     -   그 이상 : 램포트의 빵집 알고리즘 
 
-[##_Image|kage@IoqFr/btqEo7uwRkz/Jv7onABuhGcvYeb4Lt7ia1/img.jpg|alignCenter|data-filename="뮤텍스.jpeg" data-origin-width="800" data-origin-height="510" width="518" height="NaN"|출처 :&nbsp;||_##]
+![mutex](./img/mutex.jfif)
 
 ---
 ## 세마포어(Semaphore) :화장실이 여러 개 있는 레스토랑,열쇠\=칸 개수 만큼
@@ -106,7 +106,7 @@
 -   UnLock - 특정 수만큼 카운트를 뺀다. 
 -   동기화 대상이 여러 개일 때 사용 
 
-[##_Image|kage@eEAe9c/btqEo7uwTZA/rkF0TBkUAxY22lpaKmmnA0/img.png|alignCenter|data-filename="세마포어.png" data-origin-width="512" data-origin-height="368" width="456" height="NaN"|출처 :&nbsp;https://m.blog.naver.com/PostView.nhn?blogId=smuoon4680&amp;logNo=50127179815&amp;proxyReferer=https:%2F%2Fwww.google.com%2F||_##]
+![semaphore](./img/semaphore.png)
 
 ### 세마포어 종류
 
