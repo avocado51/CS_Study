@@ -8,7 +8,7 @@
 -   각 쓰레드는 자신만의 **스택과 레지스터**를 가진다. 
 -   한 순간에는 하나의 스레드만 실행이 가능하다. (독립적인 수행 단위)
 
-[##_Image|kage@ncdWo/btqEsf5zpPm/Kquz47Z4EuCPXCjChTN6Bk/img.png|alignCenter|srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbnKcTr%2FbtqDLFqUTtk%2FZGFikF6EM9a1iTVk6C45ek%2Fimg.png" data-origin-width="0" data-origin-height="0" data-ke-mobilestyle="widthContent"|||_##]
+![thread](./img/thread.png)
 
 ---
 
