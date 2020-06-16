@@ -88,11 +88,17 @@
 - 물리적 독립성
     - 내부 스키마가 변경되어도 외부/ 개념 스키마는 영향을 받지 않도록 한다.
     - 저장장치의 변경은 응용 프로그램과 개념 스키마에 영향을 주지 않는다. 
+---
+![schema](./img/schema2.png)
+
+## 데이터베이스 언어 
 
 ---
 참고 
-https://github.com/dh00023/TIL/blob/f2e19a895b75a8d4b5b6572fecac7f07ba5c6489/database/book/chapter1.md
+- https://github.com/dh00023/TIL/blob/f2e19a895b75a8d4b5b6572fecac7f07ba5c6489/database/book/chapter1.md
 
-https://raisonde.tistory.com/entry/%EC%8B%9C%ED%97%98%EB%8C%80%EB%B9%84-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EB%AA%A8%EB%8D%B8%EC%9D%98-%EC%A2%85%EB%A5%98%EC%99%80-%ED%8A%B9%EC%A7%95%EC%9D%84-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EC%9E%90
+- https://raisonde.tistory.com/entry/%EC%8B%9C%ED%97%98%EB%8C%80%EB%B9%84-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EB%AA%A8%EB%8D%B8%EC%9D%98-%EC%A2%85%EB%A5%98%EC%99%80-%ED%8A%B9%EC%A7%95%EC%9D%84-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EC%9E%90
 
-https://github.com/kdsr2z0/kdsr2z0.github.io/blob/287fb4534f1f59d9dcd7e6e8434b27034a395fc9/tmp/1%EC%9E%A5%20%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EC%9D%98%EC%9D%B4%ED%95%B4.txt
+- https://github.com/kdsr2z0/kdsr2z0.github.io/blob/287fb4534f1f59d9dcd7e6e8434b27034a395fc9/tmp/1%EC%9E%A5%20%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EC%9D%98%EC%9D%B4%ED%95%B4.txt
+
+- http://www.databaser.net/moniwiki/wiki.php/3%EB%8B%A8%EA%B3%84%EC%8A%A4%ED%82%A4%EB%A7%88%EA%B5%AC%EC%A1%B0
