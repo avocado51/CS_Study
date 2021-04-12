@@ -1,6 +1,6 @@
-CMake 정리 
+## CMake 정리 
 
-작성 방식 
+### 작성 방식 
 - 최상위 디렉토리에 CMakeList.txt 파일이 있어야 한다. 
 - CMakeList.txt => MakeFile => 실행파일 순으로 생성된다. 
 - CMakeList.txt 에는 아래의 내용이 들어가야 한다. 
