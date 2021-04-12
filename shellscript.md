@@ -1,0 +1,104 @@
+Shell script 정리
+
+- 압축 및 압축 해제
+  - tar
+    - 압축 : tar -cvf[z] 압축파일명.tar[.gz] 파일/폴더
+    - 해제 : tar -xvf[z] 압축파일명.tar[.gz]
+    - 옵션
+      - c : 파일 묶음 (tar)
+      - p : 파일 권한 저장
+      - v : verbose
+      - f : 파일 이름 지정
+      - C : 경로 지정
+      - x : 압축 풀기
+      - z : gzip으로 압축하거나 해제
+  - gz
+    - 압축 : gzip -c 파일명 > 압축파일명.gz
+    - 해제 : gzip -d 압축파일명.gz
+  - zip
+    - 압축 : zip 압축파일명.zip 파일/폴더
+    - 해제 : unzip 압축파일명.zip
+- sed
+
+  - 스트림 편집기. 명령행에서 파일을 인자로 받아 명령어를 통해 작업한 후 결과를 화면으로 확인하는 편집 방식이다.
+  - 치환
+    - sed 's/a/b/g' tmp.txt : tmp.txt 파일 안의 a를 모두 b로 치환하여 출력한다. (원본 파일 손상X)
+  - 삭제
+    - sed '1,2d' tmp.txt : tmp.txt 파일의 처음 1, 2줄을 지운다.
+    - sed '/Src/!d' tmp.txt : Src 문자가 있는 행만 지우지 않는다.
+    - sed '/^$/d' tmp.txt : 공백 라인 제거
+    - sed 's/^ \*$/d' tmp.txt : 파일 안의 모든 행에 대해 공백 제거 (space 공백 포함)
+    - sed '/hello/d' tmp.txt : hello 문자가 포함된 행을 삭제
+    - sed 's/...//' tmp.txt : 파일 안의 모든 행에 대해 처음 세개 문자들을 삭제
+    - sed 's/...$//' tmp.txt : 파일 안의 모든 행에 대해 마지막 세개 문자들을 삭제
+    - sed 's/.\*$//' tmp.txt : 파일 안의 모든 행에 대해 첫 번째 공백에서 부터 마지막까지 삭제
+    - sed 's/^.\*://' tmp.txt : 파일 안의 모든 행에 대해 처음부터 : 문자가 있는 곳까지 삭제
+  - 파일의 일부만 편집해야 할 경우 라인의 범위를 지정하여 사용 가능하다.
+    - sed '3,7s/hello//g' tmp.txt
+  - 출력
+    - sed -n '/[hH]ello/p' tmp.txt : hello/Hello 문자가 포함된 행만 프린트
+  - 삽입
+    - sed 'a\\hello\!' tmp.txt : 각 라인마다 뒤에 hello 문자를 입력
+    - sed 'a\\' tmp.txt : 각 라인마다 공백 라인 추가
+    - sed 's/^/ /' tmp.txt : 각 라인의 시작을 5 space로 대체 (탭 넣을 때 유용)
+  - 주의점
+    - 치환할 문자에서 경로가 포함될 때는 경로 사이에 \ 을 넣어줘야 한다.
+      - sed 's/\/home\/log\//\/home\/qucell\/femto-log\//g' parsingLogModules.sh
+
+- awk
+  - 파일로부터 레코드를 선택하고, 선택된 레코드에 포함된 값을 조작하거나 데이터화하는 목적으로 사용하는 프로그램
+  - 입력으로 지정된 파일로부터 데이터를 분류한 다음, 분류된 텍스트 데이터를 바탕으로 패턴 매칭 여부를 검사하거나 데이터 조작 및 연산 등을 수행하고 그 결과를 출력한다.
+  - 수행 가능 작업
+    - 텍스트 파일 전체 내용 출력
+    - 파일의 특정 필드만 출력
+    - 특정 필드에 문자열을 추가해서 출력
+    - 패턴이 포함된 레코드 출력
+    - 특정 필드에 연산 수행 결과를 출력
+    - 필드 값 비교에 따라 레코드 출력
+      ![awk](/img/awk.png)
+  - awk는 입력 데이터를 라인 단위의 레코드를 인식하고, 각 레코드에 들어있는 텍스트는 공백 문자로 구분된 필드들로 분류한다.
+  - 레코드 및 필드의 값들은 패턴 매칭 및 다양한 액션들의 파라미터로 사용된다.
+    ![record](/img/record.png)
+  - 명령어 옵션
+  - awk [OPTION...] [awk program] [ARGUMENT...]
+  - awk program
+    - ' [pattern] [{action}] '
+    - pattern을 생략할 경우 모든 레코드에 action이 적용되고
+    - action을 생략할 경우 print가 적용된다.
+    - pattern 생략
+      - awk '{ print }' file.txt : 파일 안의 모든 레코드 출력
+    - action 생략
+      - awk '/p/' file.txt : 파일 안에서 p를 포함하는 레코드 출력
+    - 변수 (파라미터)
+      - 하나의 레코드는 $0
+      - 레코드에 포함된 각 필드는 순서대로 $1.....$n으로 지칭된다.
+      - awk 'length($0) > 10 { print $3, $4, $5} ' file.txt : 레코드 길이가 10이상인 경우 3,4,5 번째 필드를 출력한다.
+        ![field](/img/field.png)
+    - BEGIN, END 패턴
+      - BEGIN 패턴을 식별하면 입력 데이터로부터 첫 번째 레코드를 처리하기 전에 BEGIN에 정의된 액션을 먼저 실행한다.
+      - END 패턴은 모든 레코드를 처리한 다음 지정된 액션을 실행한다.
+      - awk 'BEGIN { print "TITLE : Field value 1,2"} { print $1, $2} END {print "Finished"}' file.txt
+  - 사용 예제
+    - 특정 필드 값 비교를 통해 선택된 레코드만 출력
+      - awk '$1 == 10 {print $2}' [FILE]
+    - 특정 필드들의 합 구하기
+      - awk '{sum += $3} END {print sum}' [FILE]
+    - 여러 필드들의 합 구하기
+      - awk '{ for(i =2; i <= NF; i++} total += i}; END{ print "TOTAL : " total}' [FILE]
+    - 레코드 단위로 필드 합 및 평균 값 구하기
+      - awk '{sum = 0} {sum += ($3+$4+$5)} {print $0, sum, sum/3}' [FILE]
+    - 파일에 저장된 awk 프로그램 실행
+      - awk -f [AWK FILE] [FILE]
+    - 필드 구분 문자 변경하기 (기본은 space)
+      - awk -F ':' '{print $1}' [FILE]
+    - awk 실행 결과 레코드 정렬하기
+      - awk '{print $0}' [FILE]
+    - 필드 중 최대 값 출력
+      - awk '{max=0; for(i=3; i<NF; i++) max=($i > max)? $i : max; printf("%d", max);}' [FILE]
+    - 지정된 문자열을 포함하는 레코드만 출력
+      - awk '/[2-3]0/' [FILE]
+
+[출처]
+
+- AWK : https://recipes4dev.tistory.com/171
+- SED : https://linuxstory1.tistory.com/entry/SED-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%82%AC%EC%9A%A9%EB%B2%95
