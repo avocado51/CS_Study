@@ -23,10 +23,10 @@ $ docker image ls | grep [dockerfilename]
 ```
 ##
 ### docker-compose?
-	- 독립된 개발 환경을 빠르게 구성할 수 있다.
-	- 컨테이너 실행에 필요한 옵션을 docker-compose.yml 파일에 적어둘 수 있고 컨테이너 간 실행 순서나 의존성을 관리할 수 있다. 
-	- 도커 엔진의 버전 >= 1.13.1
-	- 도커 컴포즈 버전 >= 1.6.0
+- 독립된 개발 환경을 빠르게 구성할 수 있다.
+- 컨테이너 실행에 필요한 옵션을 docker-compose.yml 파일에 적어둘 수 있고 컨테이너 간 실행 순서나 의존성을 관리할 수 있다.
+- 도커 엔진의 버전 >= 1.13.1
+- 도커 컴포즈 버전 >= 1.6.0
 - docker-compose 설치 
 ```
 $ sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
