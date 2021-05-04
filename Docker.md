@@ -57,8 +57,8 @@ $ docker-compose up -d
   - logs : 서비스 로그 확인. logs [service name] 하면 특정 서비스의 로그를 볼 수 있다. 
     - -f : 로그 실시간 확인 
   - run : docker-compose up 명령어를 통해 생성 및 실행된 컨테이너에서 임의의 명령을 실행하기 위해 사용한다. 
-	- $docker-compose run [서비스명] [명령]
-	- e.g) $docker-compose run redis /bin/bash
+	- $ docker-compose run [서비스명] [명령]
+	- e.g) $ docker-compose run redis /bin/bash
 
 ### 도커 alias
 ```
